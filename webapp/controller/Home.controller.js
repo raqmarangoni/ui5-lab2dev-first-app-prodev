@@ -13,35 +13,45 @@ sap.ui.define([
 
                 const list = [
                     {
-                        name: "Banana",
-                        color: "Yellow",
-                        quantity: 6
-                    },
-                    {
-                        name: "Apple",
-                        color: "Red",
-                        quantity: 3
-                    },
-                    {
-                        name: "Blueberry",
-                        color: "Blue",
+                        name: "Rice",
                         quantity: 5
                     },
                     {
-                        name: "Orange",
-                        color: "Orange",
-                        quantity: 1
+                        name: "Beans",
+                        quantity: 8
                     },
                     {
-                        name: "Strawberry",
-                        color: "red",
+                        name: "Noodle",
+                        quantity: 10
+                    },
+                    {
+                        name: "Kitchen Oil",
+                        quantity: 3
+                    },
+                    {
+                        name: "Milk",
+                        quantity: 7
+                    },
+                    {
+                        name: "Coffee",
+                        quantity: 4
+                    },
+                    {
+                        name: "Sugar", 
+                        quantity: 6
+                    },
+                    {
+                        name: "Salt",
+                        quantity: 2
+                    },
+                    {
+                        name: "Wheat Flour",
                         quantity: 9
                     },
                     {
-                        name: "Kiwi",
-                        color: "Green",
-                        quantity: 1
-                    },
+                        name: "Soap",
+                        quantity: 11
+                    }
                     
                 ]
 
