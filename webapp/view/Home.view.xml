@@ -1,8 +1,12 @@
-<mvc:View controllerName="com.lab2dev.firstapplication.controller.Home"
+<mvc:View controllerName="com.lab2dev.firstapp.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <Button id="teste" text="my text" press="onHello"/>
-        <Button id="salve" text="Default" press="onHello" type="Emphasized"/>
-    </Page>
+    <List
+		headerText="Products"
+		headerLevel="H2"
+		items="{listModel>/}" >
+		<StandardListItem
+			title="{listModel>name}"
+			counter="{listModel>quantity}"/>
+	</List>
 </mvc:View>
