@@ -55,7 +55,7 @@ sap.ui.define([
                     
                 ]
 
-                var oModel = new JSONModel(list);
+                const oModel = new JSONModel(list);
                 this.getView().setModel(oModel, "listModel");
 
             },
