@@ -56,9 +56,10 @@ sap.ui.define([
                     }
                     
                 ]
-
+                // Cria um modelo JSON com os produtos (JSONModel)
                 const oModel = new JSONModel(list);
-                this.getView().setModel(oModel, "listModel");
+                this.getView().setModel(oModel, "list");
+                // Define o modelo com o nome "list" e fazendo a ligação com a view (Aggregation Binding)
 
             },
             onPress: function(oEvent){
