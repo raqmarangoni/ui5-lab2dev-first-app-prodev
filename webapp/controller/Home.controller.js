@@ -2,63 +2,29 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
+    "./Formatter",
+    "sap/m/MessageBox",
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel, MessageToast, MessageBox) {
+    function (Controller, JSONModel, Formatter, MessageToast, MessageBox) {
         "use strict";
 
         return Controller.extend("com.lab2dev.firstapp.controller.Home", {
             onInit: function () {
 
                 const list = [
-                    {
-                        title: "Arroz",
-                        counter: 5
-                    },
-                    {
-                        title: "Feijão",
-                        counter: 8
-                    },
-                    {
-                        title: "Macarrão",
-                        counter: 10
-                    },
-                    {
-                        title: "Óleo de Cozinha",
-                        counter: 3
-                    },
-                    {
-                        title: "Leite",
-                        counter: 7
-                    },
-                    {
-                        title: "Café",
-                        counter: 4
-                    },
-                    {
-                        title: "Açúcar", 
-                        counter: 6
-                    },
-                    {
-                        title: "Sal",
-                        counter: 2
-                    },
-                    {
-                        title: "Farinha de Trigo",
-                        counter: 9
-                    },
-                    {
-                        title: "Sabonete",
-                        counter: 11
-                    }
-                    
+                        {name: "Notebook A", Price: 1499.99, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 3.8, WeightUnit: "KG", Width: 28, Depth: 21, Height: 2.5, DimUnit: "cm"},
+                        {name: "Notebook B", Price: 899.50, CurrencyCode: "BRL", Status: "Out of Stock", WeightMeasure: 4.0, WeightUnit: "KG", Width: 31, Depth: 20, Height: 3, DimUnit: "cm"},
+                        {name: "Notebook C", Price: 2650.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 3.5, WeightUnit: "KG", Width: 26, Depth: 17, Height: 2.8, DimUnit: "cm"},
+                        {name: "Notebook D", Price: 1899.99, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 29, Depth: 23, Height: 2.2, DimUnit: "cm"},
+                        {name: "Notebook E", Price: 1299.00, CurrencyCode: "BRL", Status: "Discontinued", WeightMeasure: 4.8, WeightUnit: "KG", Width: 30, Depth: 22, Height: 2.5, DimUnit: "cm"},
+                        {name: "Notebook F", Price: 1099.95, CurrencyCode: "BRL", Status: "Out of Stock", WeightMeasure: 3.6, WeightUnit: "KG", Width: 27, Depth: 18, Height: 3.5, DimUnit: "cm"}
                 ]
                 // Cria um modelo JSON com os produtos (JSONModel)
                 const oModel = new JSONModel(list);
-                this.getView().setModel(oModel, "list");
+                this.getView().setModel(oModel, "listModel");
                 // Define o modelo com o nome "list" e fazendo a ligação com a view (Aggregation Binding)
 
             },
