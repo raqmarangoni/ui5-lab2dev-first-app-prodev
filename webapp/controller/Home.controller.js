@@ -1,11 +1,12 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
+    "sap/m/MessageToast"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, JSONModel) {
+    function (Controller, JSONModel, MessageToast) {
         "use strict";
 
         return Controller.extend("com.lab2dev.firstapp.controller.Home", {
@@ -13,44 +14,44 @@ sap.ui.define([
 
                 const list = [
                     {
-                        name: "Rice",
-                        quantity: 5
+                        title: "Arroz",
+                        counter: 5
                     },
                     {
-                        name: "Beans",
-                        quantity: 8
+                        title: "Feijão",
+                        counter: 8
                     },
                     {
-                        name: "Noodle",
-                        quantity: 10
+                        title: "Macarrão",
+                        counter: 10
                     },
                     {
-                        name: "Kitchen Oil",
-                        quantity: 3
+                        title: "Óleo de Cozinha",
+                        counter: 3
                     },
                     {
-                        name: "Milk",
-                        quantity: 7
+                        title: "Leite",
+                        counter: 7
                     },
                     {
-                        name: "Coffee",
-                        quantity: 4
+                        title: "Café",
+                        counter: 4
                     },
                     {
-                        name: "Sugar", 
-                        quantity: 6
+                        title: "Açúcar", 
+                        counter: 6
                     },
                     {
-                        name: "Salt",
-                        quantity: 2
+                        title: "Sal",
+                        counter: 2
                     },
                     {
-                        name: "Wheat Flour",
-                        quantity: 9
+                        title: "Farinha de Trigo",
+                        counter: 9
                     },
                     {
-                        name: "Soap",
-                        quantity: 11
+                        title: "Sabonete",
+                        counter: 11
                     }
                     
                 ]
@@ -59,8 +60,15 @@ sap.ui.define([
                 this.getView().setModel(oModel, "listModel");
 
             },
-            onHello: function(){
-                console.log("Hello World")
+            onPress: function(oEvent){
+                //origem do evento
+                const item = oEvent.getSource();
+                //Título do item
+                const itemTitle = item.getTitle();
+                //mensagem a ser exibida
+                const message = `O item: "${itemTitle}" foi clicado!`;
+                //exibe a mensagem na tela
+                MessageToast.show(message);       
             }
         });
     });
