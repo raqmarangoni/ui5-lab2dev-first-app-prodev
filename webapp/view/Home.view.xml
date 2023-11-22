@@ -27,8 +27,8 @@
                     <ObjectStatus
                         text="{listModel>Status}"
                         state="{
-						path:'Status',
-						formatter: 'com.lab2dev.firstapp.controller.Home'
+						path:'listModel>Status',
+						formatter: 'com.lab2dev.firstapp.controller.Formatter.status'
 					}" />
                 </firstStatus>
                 <ObjectAttribute text="{listModel>WeightMeasure} {listModel>WeightUnit}" />
