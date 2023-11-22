@@ -3,10 +3,20 @@
     xmlns="sap.m">
 		<Page id="page" title="{i18n>title}">
 		<content>
-      <List
+		<List
+		id="productList"
 		headerText="Products"
 		headerLevel="H2"
 		items="{listModel>/}" >
+		 <headerToolbar>
+         <Toolbar>
+            <Title text="Produtos"/>
+            <ToolbarSpacer/>
+            <SearchField 
+               width="50%" 
+               search=".onFilterProducts"/>
+         </Toolbar>
+      </headerToolbar>
 		<ObjectListItem
 			title="{listModel>name}"
 			type="Active"
