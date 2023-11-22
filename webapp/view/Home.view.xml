@@ -1,44 +1,40 @@
 <mvc:View controllerName="com.lab2dev.firstapp.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-		<Page id="page" title="{i18n>title}">
-		<content>
-		<List
-		id="productList"
-		headerText="Products"
-		headerLevel="H2"
-		items="{listModel>/}" >
-		 <headerToolbar>
-         <Toolbar>
-            <Title text="Produtos"/>
-            <ToolbarSpacer/>
-            <SearchField 
-               width="50%" 
-               search=".onFilterProducts"/>
-         </Toolbar>
-      </headerToolbar>
-		<ObjectListItem
-			title="{listModel>name}"
-			type="Active"
-			press="onPress"
-			number="{
+    <Page id="page" title="{i18n>title}">
+        <List
+            id="productList"
+            items="{listModel>/}"
+            headerText="Products">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="Pesquise seu produto"></Title>
+                    <ToolbarSpacer />
+                    <SearchField width="50%" search=".onFilterProducts"/>
+                </Toolbar>
+            </headerToolbar>
+            <ObjectListItem
+                title="{listModel>name}"
+                type="Active"
+                press="onListItemPress"
+                number="{
 				parts:[{path:'listModel>Price'},{path:'listModel>CurrencyCode'}],
 				type: 'sap.ui.model.type.Currency',
 				formatOptions: {showMeasure: false}
 			}"
-			numberUnit="{listModel>CurrencyCode}">
-			<firstStatus>
-				<ObjectStatus
-					text="{listModel>Status}"
-					state="{
-						path: 'listModel>Status',
-						formatter: 'com.lab2dev.firstapp.controller.Formatter.status'
+                numberUnit="{listModel>CurrencyCode}">
+                <firstStatus>
+                    <ObjectStatus
+                        text="{listModel>Status}"
+                        state="{
+						path:'Status',
+						formatter: 'com.lab2dev.firstapp.controller.Home'
 					}" />
-			</firstStatus>
-			<ObjectAttribute text="{listModel>WeightMeasure} {listModel>WeightUnit}" />
-			<ObjectAttribute text="{listModel>Width} x {listModel>Depth} x {listModel>Height} {listModel>DimUnit}" />
-		</ObjectListItem>
-	</List>
-	</content>
-	</Page>
+                </firstStatus>
+                <ObjectAttribute text="{listModel>WeightMeasure} {listModel>WeightUnit}" />
+                <ObjectAttribute
+                    text="{listModel>Width} x {listModel>Depth} x {listModel>Height} {listModel>DimUnit}" />
+            </ObjectListItem>
+        </List>
+    </Page>
 </mvc:View>
