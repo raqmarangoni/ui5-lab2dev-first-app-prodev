@@ -2,6 +2,13 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m" xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
+     <subHeader>
+            <Toolbar>
+                <Button
+                    icon="sap-icon://popup-window" press="onNavTo" type="Emphasized">
+                </Button>
+            </Toolbar>
+        </subHeader>
         <Panel>
             <List
                 id="productList"
@@ -15,7 +22,7 @@
                     </Toolbar>
                 </headerToolbar>
                 <ObjectListItem
-                    title="{listModel>name}"
+                    title="{listModel>Name}"
                     type="Active"
                     press="onListItemPress"
                     number="{

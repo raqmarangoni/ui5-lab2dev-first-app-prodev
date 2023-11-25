@@ -39,14 +39,14 @@ sap.ui.define([
                 })  
 
                 const list = [
-                    { name: "Asus", Price: 956.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.5, WeightUnit: "KG", Width: 35, Depth: 19, Height: 3, DimUnit: "cm" },
-                    { name: "Macbook", Price: 1200.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 25, Depth: 18, Height: 2, DimUnit: "cm" },
-                    { name: "Dell", Price: 1155.40, CurrencyCode: "BRL", Status: "Out of Stock", WeightMeasure: 4.5, WeightUnit: "KG", Width: 30, Depth: 20, Height: 4, DimUnit: "cm" },
-                    { name: "Acer", Price: 2999.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 29, Depth: 22, Height: 3, DimUnit: "cm" },
-                    { name: "Asus", Price: 956.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.5, WeightUnit: "KG", Width: 35, Depth: 19, Height: 3, DimUnit: "cm" },
-                    { name: "Macbook", Price: 1200.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 25, Depth: 18, Height: 2, DimUnit: "cm" },
-                    { name: "Dell", Price: 1155.40, CurrencyCode: "BRL", Status: "Out of Stock", WeightMeasure: 4.5, WeightUnit: "KG", Width: 30, Depth: 20, Height: 4, DimUnit: "cm" },
-                    { name: "Acer", Price: 2999.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 29, Depth: 22, Height: 3, DimUnit: "cm" },
+                    { Name: "Asus", Price: 956.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.5, WeightUnit: "KG", Width: 35, Depth: 19, Height: 3, DimUnit: "cm" },
+                    { Name: "Macbook", Price: 1200.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 25, Depth: 18, Height: 2, DimUnit: "cm" },
+                    { Name: "Dell", Price: 1155.40, CurrencyCode: "BRL", Status: "Out of Stock", WeightMeasure: 4.5, WeightUnit: "KG", Width: 30, Depth: 20, Height: 4, DimUnit: "cm" },
+                    { Name: "Acer", Price: 2999.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 29, Depth: 22, Height: 3, DimUnit: "cm" },
+                    { Name: "Asus", Price: 956.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.5, WeightUnit: "KG", Width: 35, Depth: 19, Height: 3, DimUnit: "cm" },
+                    { Name: "Macbook", Price: 1200.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 25, Depth: 18, Height: 2, DimUnit: "cm" },
+                    { Name: "Dell", Price: 1155.40, CurrencyCode: "BRL", Status: "Out of Stock", WeightMeasure: 4.5, WeightUnit: "KG", Width: 30, Depth: 20, Height: 4, DimUnit: "cm" },
+                    { Name: "Acer", Price: 2999.00, CurrencyCode: "BRL", Status: "Available", WeightMeasure: 4.2, WeightUnit: "KG", Width: 29, Depth: 22, Height: 3, DimUnit: "cm" },
                 ]
 
                 var oListModel = new JSONModel(list);
@@ -75,7 +75,7 @@ sap.ui.define([
                 var aFilter = []
                 const sQuery = oEvent.getParameter("query")
                 if (sQuery) {
-                    aFilter.push(new Filter("name", FilterOperator.Contains, sQuery))
+                    aFilter.push(new Filter("Name", FilterOperator.Contains, sQuery))
                 }
 
                 const oList = this.byId("productList")
@@ -121,6 +121,12 @@ sap.ui.define([
             onToggleInfoToolbar: function (oEvent) {
                 const oTable = this.byId("productTable");
                 oTable.getInfoToolbar().setVisible(!oEvent.getParameter("pressed"));
-            }
+
+            
+            
+            },
+            onNavTo: function() {
+                this.getOwnerComponent().getRouter().navTo("News")
+            },
         });
     });
